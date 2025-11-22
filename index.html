@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <audio
+      class="sound-effects hidden"
+      controls
+      src="Sounds/Pokemon-Select.mp3"
+    ></audio>
+    <div class="container">
+      <!-- <input type="checkbox" id="pokedex-open" /> -->
+      <div class="pokedex">
+        <div class="screen" id="display-screen">
+          <div class="loader hidden"></div>
+          <img class="display pkm-stats" alt="" />
+          <label class="lbl_pkm-name pkm-info pkm-stats"></label>
+          <label class="lbl_pkm-id pkm-info pkm-stats"></label>
+          <!-- Stats -->
+          <label class="lbl_pkm-hp pkm-stats"></label>
+          <label class="lbl_pkm-attack pkm-stats"></label>
+          <label class="lbl_pkm-defense pkm-stats"></label>
+          <label class="lbl_pkm-spec-attack pkm-stats"></label>
+          <label class="lbl_pkm-spec-defense pkm-stats"></label>
+          <label class="lbl_pkm-speed pkm-stats"></label>
+        </div>
+
+        <input
+          type="text"
+          id="text-search"
+          class="text-box"
+          placeholder="Search for Pokemon"
+        />
+
+        <!-- Navigation -->
+        <button class="btn_pkm_search btn">Search</button>
+        <button class="btn_pkm_select btn">Select</button>
+
+        <button class="btn_pkm_map btn">Map</button>
+        <button class="btn_pkm_pokedex btn">Dex</button>
+        <!-- Arrow Navigation -->
+
+        <img
+          class="img_left-arrow navigation"
+          src="/images/Dpad/leftarrow.jpg"
+        />
+
+        <img
+          class="img_right-arrow navigation"
+          src="/images/Dpad/rightarrow.jpg"
+        />
+
+        <img class="img_up-arrow navigation" src="/images/Dpad/uparrow.jpg" />
+
+        <img
+          class="img_down-arrow navigation"
+          src="/images/Dpad/downarrow.jpg"
+        />
+
+        <!-- <button class="btn_pkm_search_left"></button>
+        <button class="btn_pkm_search_right"></button>
+        <button class="btn_pkm_search_up"></button>
+        <button class="btn_pkm_search_bottom"></button>
+        -->
+      </div>
+      <!-- <div class="pokedex-top"> -->
+      <div class="pokedex-top pokedex-top-inside">
+        <button class="btn_pkm_submit btn">Submit</button>
+        <button class="btn-screen-mode" id="btn-screen-mode-text">Text</button>
+        <button class="btn-screen-mode" id="btn-screen-mode-time">Time</button>
+        <button class="btn-screen-mode" id="btn-screen-mode-weather">
+          Wea- ther
+        </button>
+        <div class="screen" id="inside-screen"></div>
+        <textarea class="text-box" id="text-keyboard"></textarea>
+        <img
+          src="images/back-inside.png"
+          id="img-inside-return"
+          for="pokedex-open"
+        />
+      </div>
+      <div class="pokedex-top pokedex-top-outside">
+        <img
+          src="images/back-inside.png"
+          id="img-outside-return"
+          for="pokedex-open"
+        />
+        <!-- <label for="pokedex-open"></label> -->
+        <img
+          src="images/Pokemon-Logo.png"
+          alt="Pokemon Logo"
+          id="top-case-logo"
+        />
+      </div>
+      <!-- </div> -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

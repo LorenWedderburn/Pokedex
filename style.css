@@ -1,0 +1,482 @@
+:root {
+  --pokedex-color--light: #e74d4d;
+  --pokedex-color--dark: #da1b1b;
+  --color-brand--2: #ececec;
+
+  --color-background-light: #7fc5d6;
+  --color-background-dark: #04b6e2;
+
+  --color-dark--1: #2d3439;
+  --color-dark--2: #42484d;
+  --color-light--1: #aaa;
+  --color-light--2: #ececec;
+  --color-light--3: rgb(214, 222, 224);
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--color-background-light),
+    var(--color-background-dark)
+  );
+}
+
+/* ---Screen Components--- */
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(10, 100px);
+  grid-template-columns: repeat(20, 100px);
+}
+
+.pokedex,
+.pokedex-top-inside,
+.pokedex-top-outside {
+  width: 1000px;
+  height: 900px;
+  display: grid;
+  grid-template-rows: repeat(18, 50px);
+  grid-template-columns: repeat(20, 50px);
+
+  grid-column: 2/12;
+  grid-row: 2/11;
+
+  border: 5px solid #333;
+  background: linear-gradient(
+    135deg,
+    var(--pokedex-color--light),
+    var(--pokedex-color--dark)
+  );
+  border-radius: 40px;
+  transform-style: preserve-3d;
+}
+
+.pokedex-top-outside {
+  backface-visibility: hidden;
+}
+
+.pokedex {
+  perspective: 1500;
+}
+
+.pokedex-top {
+  grid-column: 2/12;
+  grid-row: 2/11;
+  z-index: 1;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.pokedex-top label {
+  width: 1000px;
+  height: 1000px;
+  cursor: pointer;
+}
+
+.screen {
+  display: grid;
+  grid-template-rows: repeat(12, 50px);
+  grid-template-columns: repeat(14, 50px);
+  /* grid-area: 4/6/-4/16; */
+
+  border-radius: 40px;
+  border: 5px solid #333;
+  background: linear-gradient(135deg, #e7f1ef, #56555a);
+}
+
+#display-screen {
+  grid-area: 4/6/-4/16;
+}
+
+#inside-screen {
+  width: 700px;
+  height: 600px;
+  grid-area: 4/4/-4/18;
+}
+
+.display {
+  height: 100px;
+  width: 100px;
+  border: 1px solid #333;
+  background: linear-gradient(45deg, #4a4a4d, #b9b7c0);
+  grid-column: 5/6;
+  grid-row: 2/3;
+}
+
+#text-search {
+  grid-area: 16/9/18/13;
+  box-shadow: inset 0 0 10px black;
+}
+
+#text-keyboard {
+  transform: rotateY(180deg);
+  grid-area: 16/6/28/16;
+  overflow-wrap: break-word;
+  resize: none;
+  box-shadow: inset 0 0 10px black;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#text-search::placeholder {
+  color: black;
+}
+
+.text-box {
+  font-weight: bold;
+  background: linear-gradient(
+    135deg,
+    var(--pokedex-color--light),
+    var(--pokedex-color--dark)
+  );
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid var(--pokedex-color--dark);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---Buttons--- */
+
+.btn_pkm_search {
+  grid-area: 16/7/16/7;
+}
+
+.btn_pkm_select {
+  grid-area: 16/14/16/14;
+  justify-self: right;
+}
+
+.btn_pkm_submit {
+  grid-area: 14/2/14/2;
+  transform: rotateY(180deg);
+}
+
+.btn_pkm_map {
+  grid-area: 14/17/14/17;
+}
+
+.btn_pkm_pokedex {
+  grid-area: 12/17/12/17;
+}
+
+#btn-screen-mode-text {
+  grid-area: 12/19/12/19;
+}
+
+#btn-screen-mode-time {
+  grid-area: 14/19/14/19;
+}
+
+#btn-screen-mode-weather {
+  grid-area: 10/19/10/19;
+}
+
+.btn-screen-mode {
+  transform: rotateY(180deg);
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  margin-top: 10px;
+  background: linear-gradient(
+    135deg,
+    var(--pokedex-color--light),
+    var(--pokedex-color--dark)
+  );
+  font-weight: bold;
+}
+
+.btn {
+  height: 60px;
+  width: 60px;
+  border-radius: 90px;
+  margin-top: 10px;
+  background: linear-gradient(
+    135deg,
+    var(--pokedex-color--light),
+    var(--pokedex-color--dark)
+  );
+  font-weight: bold;
+}
+
+/* ---Pokemon Info--- */
+
+.pkm-info {
+  align-self: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.lbl_pkm-name {
+  grid-column: 2/6;
+  grid-row: 4;
+}
+
+.lbl_pkm-id {
+  grid-column: 2/6;
+  grid-row: 5;
+}
+
+.pkm-stats {
+  align-self: center;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.lbl_pkm-hp {
+  grid-column: 7/10;
+  grid-row: 4;
+}
+
+.lbl_pkm-attack {
+  grid-column: 7/10;
+  grid-row: 5;
+}
+
+.lbl_pkm-defense {
+  grid-column: 7/10;
+  grid-row: 6;
+}
+
+.lbl_pkm-spec-attack {
+  grid-column: 7/10;
+  grid-row: 7;
+}
+
+.lbl_pkm-spec-defense {
+  grid-column: 7/10;
+  grid-row: 8;
+}
+
+.lbl_pkm-speed {
+  grid-column: 7/10;
+  grid-row: 9;
+}
+
+/* Navigation Arrows */
+
+.img_left-arrow {
+  grid-area: 8/2/8/2;
+}
+
+.img_right-arrow {
+  grid-area: 8/4/8/4;
+}
+
+.img_up-arrow {
+  grid-area: 7/3/7/3;
+}
+
+.img_down-arrow {
+  grid-area: 9/3/9/3;
+}
+
+.navigation {
+  height: 60px;
+  width: 60px;
+}
+
+.pokedex button,
+image {
+  cursor: pointer;
+}
+
+#top-case-logo {
+  width: 400px;
+}
+
+#img-outside-return,
+#img-inside-return {
+  grid-area: 9/1/10/2;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+#pokedex-open {
+  display: none;
+}
+
+.leaflet-popup .leaflet-popup-content-wrapper {
+  display: inline-block;
+  width: 225px;
+  color: black;
+  border-radius: 5px;
+  height: 110px;
+  padding-right: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.leaflet-popup-content-wrapper img {
+  height: 50px;
+  width: 50px;
+  grid-area: 7/3/7/5;
+}
+
+.encounter-popup .leaflet-popup-content-wrapper {
+  border: solid black;
+  background-color: var(--pokedex-color--dark);
+  font-weight: bold;
+}
+
+.non-encounter-popup .leaflet-popup-content-wrapper {
+  border: solid black;
+  background-color: var(--color-brand--2);
+  font-weight: bold;
+}
+
+/* ---DisplayModeButton--- */
+
+.smt-textbox {
+  transform: rotateY(180deg);
+  border: solid 2px black;
+  background: linear-gradient(135deg, #7e7d83, #e7f1ef);
+  box-shadow: inset 0 0 10px black;
+  font-weight: bold;
+  font-size: 1rem;
+  color: black;
+}
+
+#smt-displaytext {
+  transform: rotateY(180deg);
+  grid-area: 2/3/6/13;
+  overflow-wrap: break-word;
+  resize: none;
+}
+
+#smt-displaydescription {
+  transform: rotateY(180deg);
+  grid-area: 2/3/10/13;
+  overflow-wrap: break-word;
+  resize: none;
+}
+
+#weather-module-weathertype {
+  width: 200px;
+  height: 200px;
+  grid-area: 1/4/4/8;
+  justify-self: center;
+}
+
+#weather-module-card {
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-rows: repeat(10, 40px);
+  grid-template-columns: repeat(10, 40px);
+  background: linear-gradient(
+    135deg,
+    var(--color-background-light),
+    var(--color-background-dark)
+  );
+
+  grid-area: 3/12/10/4;
+  /* border: solid 1px black; */
+}
+
+#weather-module-citylabel {
+  transform: rotateY(180deg);
+  font-weight: bold;
+  font-size: 2rem;
+  color: var(--color-brand--2);
+  grid-area: 6/10/6/2;
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+}
+.p-weather-module-extra-text {
+  transform: rotateY(180deg);
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--color-brand--2);
+  margin-top: 10px;
+}
+.img-weatherextra {
+  transform: rotateY(180deg);
+  width: 50px;
+  height: 50px;
+}
+
+#weather-module-temperaturelabel {
+  grid-area: 1/4/1/3;
+  font-size: 2.5rem;
+}
+
+#weather-module-windlabel {
+  grid-area: 9/10/9/6;
+}
+
+#weather-module-humiditylabel {
+  grid-area: 9/5/9/3;
+}
+
+#weather-module-windicon {
+  grid-area: 8/10/9/9;
+}
+
+#weather-module-humidityicon {
+  grid-area: 8/4/9/5;
+}
+
+/* ---DisplayModeButton--- */
+
+#info {
+  height: 95px;
+  width: 235px;
+}
+
+#non-encounter-textarea {
+  border: none;
+  overflow-wrap: break-word;
+  resize: none;
+  background-color: var(--color-brand--2);
+  font-weight: bold;
+}
+
+#encounter-textarea {
+  border: none;
+  overflow-wrap: break-word;
+  resize: none;
+  background-color: var(--pokedex-color--dark);
+  font-weight: bold;
+  width: 150px;
+  height: 35px;
+}
+
+#clock-display {
+  transform: rotateY(180deg);
+  display: flex;
+  width: 400px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  grid-area: 3/12/10/4;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
