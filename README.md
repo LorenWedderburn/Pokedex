@@ -18,7 +18,12 @@ Once open the Pokedex offers you several options.
 3. Search allows you to enter a name of a pokemon into the text box, display an image of the pokemon and its stats
 4. Select allows you yo lock in a pokemon you have searched and allows you to drop their specific encounter pin on the map
 
+# --Weather Module--
 ![image alt](https://github.com/LorenWedderburn/Pokedex/blob/8a9e2e0beaa27500ad969d88764af3fd45e36b0e/PokeWeather.JPG)
+
+# --Search Module--
 ![image alt](https://github.com/LorenWedderburn/Pokedex/blob/0954dcfc7028af864fb5193f0e491bc6157c05fe/PokeSearch.JPG)
+
+# --Map Module--
 ![image alt](https://github.com/LorenWedderburn/Pokedex/blob/7542a143779f4e210be175e6ac2b958b955db906/PokeMap.JPG)
 
