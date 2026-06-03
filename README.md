@@ -1,5 +1,26 @@
 # --Overview--
-Pokemon Pokedex created entirely in Javascript. The Pokedex was the last large project I created in raw Javascript. 
+This was the final large project I built before moving to React. The goal was to demonstrate what's possible with raw JavaScript by combining multiple APIs into a single cohesive application. It features a device-style Pokédex interface with distinct modes for searching, browsing, and mapping Pokémon encounters.
+
+# --Features--
+* Pokédex — Search for any Pokémon and view its image, stats, and details  
+* Encounter Map — Interactive map where you can drop pins to record real-world Pokémon encounter locations  
+* Pin Notes — Attach custom text notes to any map pin  
+* Weather Tool — Check live weather conditions for any city in the world  
+* Time Display — View the current local time for any location  
+* Multiple Modes — Dex, Map, Search, and Select interface modes  
+
+# --Running the Project--
+
+* npm install  
+* npm run dev  
+* Live demo: ren-dex.netlify.app  
+
+# --What I Learned--
+
+* Consuming and combining multiple third-party REST APIs  
+* Building a complex UI without a framework  
+* Managing application state in vanilla JavaScript  
+*Working with interactive maps and geolocation data  
 
 # --Closed Pokedex--
 ![image alt](https://github.com/LorenWedderburn/Pokedex/blob/04e6ea1e492d399a4c0da5fd89242a468518d268/PokeClose.JPG)
