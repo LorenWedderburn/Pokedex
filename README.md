@@ -20,7 +20,16 @@ This was the final large project I built before moving to React. The goal was to
 * Consuming and combining multiple third-party REST APIs  
 * Building a complex UI without a framework  
 * Managing application state in vanilla JavaScript  
-*Working with interactive maps and geolocation data  
+*Working with interactive maps and geolocation data
+
+# --Tech Stack--
+
+* Vanilla JavaScript
+* PokéAPI
+* OpenWeather API
+* Leaflet.js (interactive mapping)
+* CSS
+* Netlify
 
 # --Closed Pokedex--
 ![image alt](https://github.com/LorenWedderburn/Pokedex/blob/04e6ea1e492d399a4c0da5fd89242a468518d268/PokeClose.JPG)
