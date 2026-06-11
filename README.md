@@ -1,7 +1,7 @@
 # --Overview--
 This was the final large project I built before moving to React. The goal was to demonstrate what's possible with raw JavaScript by combining multiple APIs into a single cohesive application. It features a device-style Pokédex interface with distinct modes for searching, browsing, and mapping Pokémon encounters.
 
-🎬 **Live Demo:** [rencrm.netlify.app/](https://rencrm.netlify.app/)
+🎬 **Live Demo:** [ren-dex.netlify.app/](https://ren-dex.netlify.app/)
 
 # --Features--
 * Pokédex — Search for any Pokémon and view its image, stats, and details  
